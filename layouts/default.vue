@@ -1,16 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar fixed app>
-      <v-toolbar-title v-text="title" />
-    </v-app-bar>
+    <h1 class="textAppBar" v-text="title"></h1>
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
@@ -19,24 +14,23 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
-      drawer: false,
       fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      title: 'POKEDEX',
+      title: 'PokeDex',
     }
   },
 }
 </script>
+
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+h1 {
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 25px;
+}
+.v-application {
+  background: linear-gradient(to right, #d4d3dd, #ffc600);
+  font-family: 'Lato';
+}
+</style>
